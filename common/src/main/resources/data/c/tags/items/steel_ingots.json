@@ -1,0 +1,33 @@
+{
+  "replace": false,
+  "values": [
+    {
+      "id": "astromine:steel_ingot",
+      "required": false
+    },
+    {
+      "id": "indrev:steel_ingot",
+      "required": false
+    },
+    {
+      "id": "modern_industrialization:steel_ingot",
+      "required": false
+    },
+    {
+      "id": "mw:steel_ingot",
+      "required": false
+    },
+    {
+      "id": "mythicmetals:steel_ingot",
+      "required": false
+    },
+    {
+      "id": "techreborn:steel_ingot",
+      "required": false
+    },
+    {
+      "id": "enriched:steel_ingot",
+      "required": false
+    }
+  ]
+}

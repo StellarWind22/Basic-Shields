@@ -1,0 +1,9 @@
+{
+  "replace": false,
+  "values": [
+    {
+      "id": "more_gems:spinel",
+      "required": false
+    }
+  ]
+}

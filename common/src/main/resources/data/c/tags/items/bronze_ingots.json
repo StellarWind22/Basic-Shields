@@ -1,0 +1,33 @@
+{
+  "replace": false,
+  "values": [
+    {
+      "id": "astromine:bronze_ingot",
+      "required": false
+    },
+    {
+      "id": "indrev:bronze_ingot",
+      "required": false
+    },
+    {
+      "id": "modern_industrialization:bronze_ingot",
+      "required": false
+    },
+    {
+      "id": "mw:bronze_ingot",
+      "required": false
+    },
+    {
+      "id": "mythicmetals:bronze_ingot",
+      "required": false
+    },
+    {
+      "id": "techreborn:bronze_ingot",
+      "required": false
+    },
+    {
+      "id": "texp:bronze_ingot",
+      "required": false
+    }
+  ]
+}

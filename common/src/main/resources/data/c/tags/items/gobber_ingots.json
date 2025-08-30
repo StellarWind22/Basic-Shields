@@ -1,0 +1,9 @@
+{
+  "replace": false,
+  "values": [
+    {
+      "id": "gobber2:gobber2_ingot",
+      "required": false
+    }
+  ]
+}

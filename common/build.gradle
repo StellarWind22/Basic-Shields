@@ -14,5 +14,7 @@ dependencies {
 
     modImplementation "dev.architectury:architectury:$rootProject.architectury_api_version"
 
+    //DO NOT USE ANY FABRIC SPECIFIC CLASSES!!!
     modImplementation "maven.modrinth:shieldlib:${project.shieldlib_version}-fabric"
+    modImplementation "maven.modrinth:midnightlib:${project.midnightlib_version}-fabric"
 }
