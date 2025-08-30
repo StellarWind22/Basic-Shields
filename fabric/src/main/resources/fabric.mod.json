@@ -15,10 +15,10 @@
   "environment": "*",
   "entrypoints": {
     "main": [
-      "com.stellarwind22.basicshields.fabric.BasicshieldsFabric"
+      "com.stellarwind22.basicshields.fabric.init.BasicShieldsFabric"
     ],
     "client": [
-      "com.stellarwind22.basicshields.fabric.client.BasicshieldsFabricClient"
+      "com.stellarwind22.basicshields.fabric.init.BasicshieldsFabricClient"
     ]
   },
   "mixins": [

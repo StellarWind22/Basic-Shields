@@ -1,33 +1,43 @@
 package com.stellarwind22.basicshields.object;
 
+import com.stellarwind22.basicshields.init.BasicShields;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Supplier;
 
 public abstract class ContentModule {
 
     public static final List<ContentModule> modules = new ArrayList<>();
     public static ModRegister register;
 
-    public static void registerModulesContent(String modId, List<String> loadedMods) {
-        register = new ModRegister(modId);
+    public static void loadModules(ModRegister register, List<String> loadedMods) {
         for(ContentModule module : modules) {
-            module.tryLoad(register, loadedMods);
+            if(module.shouldLoad(loadedMods)) {
+                module.setLoaded(true);
+                module.load(register);
+            }
         }
+        register.register();
+    }
+
+    public static void loadModulesClient(ModRegister register) {
+        for(ContentModule module : modules) {
+            if(module.isLoaded) module.loadClient(register);
+        }
+        register.registerClient();
     }
 
     private boolean isLoaded = false;
-    private final Supplier<Boolean> forceLoad;
-    private final String[] dependsOn;
+    private final List<String> dependsOn;
 
-    public ContentModule(Supplier<Boolean> forceLoad, String...dependsOn) {
+    public ContentModule(List<String> dependsOn) {
         modules.add(this);
-        this.forceLoad = forceLoad;
         this.dependsOn = dependsOn;
     }
 
-    public void tryLoad(ModRegister register, List<String> loadedMods) {
-        boolean shouldLoad = this.forceLoad.get();
+    public boolean shouldLoad(List<String> loadedMods) {
+        //Handle force loading
+        boolean shouldLoad = BasicShields.isDev();
 
         if(!shouldLoad) {
             boolean hasDepends = true;
@@ -40,15 +50,17 @@ public abstract class ContentModule {
             shouldLoad = hasDepends;
         }
 
-        if(shouldLoad) {
-            this.isLoaded = true;
-            addContent(register);
-        }
+        return shouldLoad;
     }
 
     public boolean isLoaded() {
         return this.isLoaded;
     }
 
-    abstract void addContent(ModRegister register);
+    protected void setLoaded(boolean loaded) {
+        this.isLoaded = loaded;
+    }
+
+    abstract void load(ModRegister register);
+    abstract void loadClient(ModRegister register);
 }
