@@ -1,4 +1,3 @@
-
 # gradle
 
 .gradle/
@@ -32,6 +31,4 @@ bin/
 # fabric
 
 run/
-
-#scripts
-*.py
+tmp/

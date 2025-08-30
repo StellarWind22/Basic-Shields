@@ -1,0 +1,37 @@
+{
+  "schemaVersion": 1,
+  "id": "basicshields",
+  "version": "${version}",
+  "name": "BasicShields",
+  "description": "Basic Shields adds vanilla-style shields to Minecraft for each material. All shields fully support banners!",
+  "authors": [
+    "StellarWind22"
+  ],
+  "contact": {
+    "homepage": "https://modrinth.com/mod/basic-shields"
+  },
+  "license": "All-Rights-Reserved",
+  "icon": "assets/basicshields/icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "com.stellarwind22.basicshields.fabric.BasicshieldsFabric"
+    ],
+    "client": [
+      "com.stellarwind22.basicshields.fabric.client.BasicshieldsFabricClient"
+    ]
+  },
+  "mixins": [
+    "basicshields.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=0.17.2",
+    "minecraft": "~1.21.8",
+    "java": ">=21",
+    "architectury": ">=17.0.8",
+    "fabric-api": "*"
+  },
+  "suggests": {
+    "another-mod": "*"
+  }
+}
